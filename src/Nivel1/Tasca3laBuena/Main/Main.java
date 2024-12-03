@@ -1,5 +1,6 @@
 package Nivel1.Tasca3laBuena.Main;
 
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -49,5 +50,10 @@ public class Main {
         }
 
         System.out.println("You scored " + points + " points.");
+    }
+    public static void saveScore(String name, int score) throws IOException {
+        FileWriter writer = new FileWriter("Nivell1/n1exercici3/ranking.txt", true);
+        writer.write("Player " + name + "Score: " + score + "\n");
+        writer.close();
     }
 }
